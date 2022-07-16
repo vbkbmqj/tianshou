@@ -218,7 +218,7 @@ class ActorProb(nn.Module):
             shape = [1] * len(mu.shape)
             shape[1] = -1
             sigma = (self.sigma_param.view(shape) + torch.zeros_like(mu)).exp()
-        return (mu, sigma), state
+        return (mu, sigma), hidden
 
 
 class RecurrentActorProb(nn.Module):
